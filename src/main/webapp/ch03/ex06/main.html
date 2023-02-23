@@ -1,0 +1,21 @@
+<!-- static page는 html로 만든다 -->
+<!-- HTTP Server(apache server) : html이면 J2EE 들리지 않고 바로 전달 
+	J2EE Container : servlet 이면  J2EE 들러서 전달 -->
+<meta charset='utf-8'>
+<h3>상품</h3>
+<form action = 'cartAddProc.jsp' method='post'>
+	<ul>
+		<li>노트북<input type='checkbox' name='product' value='노트북'></li>
+		<li>모니터<input type='checkbox' name='product' value='모니터'></li>
+		<li>마우스<input type='checkbox' name='product' value='마우스'></li>
+	</ul>
+	<button type = 'submit'>담기</button>
+	<button type = 'submit' formaction='cartOut.jsp'>보기</button> <!-- 보기 버튼을 누르면 cartOut으로 리퀘스트를 보낸다. -->
+</form>
+
+
+<!-- 
+아쉬운 점 
+새로 물품을 추가하고 싶으면 리뉴얼?되서 담긴다. 기존 담긴 물품은 삭제된다.
+=> 아쉬운 점을 과제로 해결해보자,,, home>ex06
+ -->
