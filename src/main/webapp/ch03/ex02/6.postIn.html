@@ -1,0 +1,29 @@
+<meta charset='utf-8'>
+<form action='6.postOut.jsp' method='post'>
+	이름: <input type='text' name='userName'/>
+	<input type='submit'/>
+</form>
+
+<!-- 
+request method가 post인 경우에는 url에 파라미터가 존재하지 않는다. (get은 url에 파라미터가 존재한다.)
+http://localhost/servlet/ch03/ex02/6.postOut.jsp  //userName 값이 없음.
+
+
+개발자 도구 열어서 확인해보자.
+ㄴ
+get& post 공통점 : request url 은 리퀘스트 헤더에 저장된다.
+파라미터는 리퀘스트 헤더에 저장된다.
+get -> url일부러 만든다.  파라미터가 리퀘스트 헤더에 저장된다.url에 저장했을뿐인데 거기에 파라미터가 포함되어 있었을뿐이다.
+post -> body 안에 따로 저장한다.
+
+get => content type이 없다
+post => content type이 있다.
+
+
+영상 등 파일은 post method를 사용한다.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+post method에서는
+url은 리퀘스트 헤더에 저장, 파라미터 벨류ㅠ는 리퀘스트 바디에 저장된다.
+ -->

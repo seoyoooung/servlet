@@ -1,0 +1,31 @@
+<meta charset='utf-8'/>
+<form action='3.defaultOut.jsp'>
+	text: <input type='text' name = 'text'/><br>
+	number: <input type='number' name = 'number'/><br>
+	date : <input type='date' name= 'date'/><br>
+	checkbox : <input type='checkbox' name='checkbox'/><br>
+	radio: <input type='radio' name='radio'/><br>
+	<hr>
+	
+<!-- 
+아무것도 적지 않고 제출하면 마지막 2개 값만 null값이 나오고 나머지는 깨끗(empty string)하다.
+http://localhost/servlet/ch03/ex02/3.defaultOut.jsp?text=&number=&date=
+checkbox랑 radio는 아예 null 상태 (파라미터가 없다는 뜻이다)
+화면만 보고 판단하면 안되고 출력 후 주소url을 보고 판단해야한다.
+ -->	
+	
+	text: <input type='text' name = 'text2' value='hello'/><br>
+	number: <input type='number' name = 'number2' value='12'/><br>
+	date : <input type='date' name= 'date2' value='2023-02-21'/><br>
+	checkbox : <input type='checkbox' name='checkbox2' value='apple' checked /><br>
+	radio: <input type='radio' name='radio2' value='grape'checked /><br>
+	
+	<input type='submit'/>
+</form>
+
+
+<!--
+예외) 유저가 내 말을 안듣고 데이터가 입력 안되었는데 제출....ㅐㅎㅆ을때
+기본값으로 무엇이 쓰이는 지 알아보자.
+입력은 in 출력은 out을 붙이고 있다.-->
+

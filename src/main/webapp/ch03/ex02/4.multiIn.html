@@ -1,0 +1,28 @@
+<meta charset='utf-8'/>
+<form action='4.multiOut.jsp'>
+<!--  파라미터 네임이 같은게 n개인 경우 /  -->
+	<fieldset>
+		<input type ='checkbox' name='letter' value='politics'/>정치
+		<input type ='checkbox' name='letter' value='economics'/>경제
+		<input type ='checkbox' name='letter' value='culture'/>문화
+	</fieldset>
+<!--  여기서 파라미터 갯수는 3개이다.
+파라미터 네임이 다 letter로 갔다.
+물리적으로는 파라미터는 3개 논리적으로는 1개이다.
+(파라미터는 1개인데 파라미터 벨류는 3개야.) -->
+	<fieldset>
+		<input type = 'radio' name='gender' value='male'/>남
+		<input type = 'radio' name='gender' value='female'/>여
+	</fieldset>
+<!-- 파라미터 갯수는 1개이다. radio는 하나만 선택 가능. -->
+	
+	<fieldset>
+		<select name ='job' multiple> <!-- multiple 사용해서 n개 -->
+			<option value = 'developer'>개발자</option>
+			<option value = 'planner'>기획자</option>
+			<option value = 'dba'>DBA</option>
+		</select>
+	</fieldset>
+	<input type ='submit'/>
+</form>
+
