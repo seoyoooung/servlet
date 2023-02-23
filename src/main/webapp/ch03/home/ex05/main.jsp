@@ -1,4 +1,24 @@
 <%@ page language='java' contentType='text/html; charset=utf-8' pageEncoding='utf-8'%>
+<%
+	Object userId = session.getAttribute("userId");
+	if(userId == null) {
+%> <%-- 로그인 후에 메인페이지에 왔더라면 userId는 파악이 될 것이다. session에 userId가 남아있으니까.--%>
+	<a href ='login.jsp'>로그인</a>
+<%
+	} else {
+%>
+	<%= userId %>님, 환영합니다. &nbsp;
+	<a href='logout.jsp'>로그아웃</a>
+<%
+	}
+%>
+<%--
+위 전체 코드를 지배하고 있는것은 toggle이다.
+
+ --%>
+
+
+
 <%-- 과제 : 
 메인페이지에서 로그인 링크를 누르면, 로그인 폼으로 이동한다.
 로그인 폼에서, 아이디/암호를 입력하고, 로그인 폼을 제출한다.
@@ -14,12 +34,15 @@
 위 폼 아래 에러 메세지를 출력한다.
 (에러메세지 성의없게 쓰지않기. 현재 상태 보여주거나 진행상태 알려주기) --%> 
 
-<%--
+<%-- <정리>
 메인페이지에 로그인 링크 만들기
 로그인 폼에 아이디 암호 제출 만들기 ( 아이디랑 암호는 java로 설정하기
 proc에서 로그인 성공시 (메인에 java님 환영합니다 출력) + 로그아웃 링크 -> 링크 누르면 메인으로 이동
 		로그인 실패시 (다시 로그인 폼으로 이동 , 폼 아래 에러 메세지)
 --%>
+
+<%-- 내 답안
 <nav>
 	<a href = 'login.jsp'>login</a>
 </nav>
+--%>

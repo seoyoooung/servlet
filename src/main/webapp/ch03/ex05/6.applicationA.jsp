@@ -5,7 +5,5 @@
 %>
 <a href ='6.applicationB.jsp'>view</a>
 
-<%--
-데이터는 파라미터랑 attribute가 있다.
-차이점은 뭘까? 
---%>
+<%-- 데이터는 파라미터랑 attribute가 있다.
+차이점은 뭘까? 1.scopeA.jsp에 설명 있음.--%>

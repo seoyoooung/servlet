@@ -6,23 +6,37 @@
 	session.setAttribute("three","세션");
 	application.setAttribute("four","애플리케이션");
 %>
-
 <c:redirect url='1.scopeB.jsp'/>
+<%-- 복습시간
+파라미터랑 어트리뷰트 공통점은 업무상 사용하는 데이터이다.
+
+< parameter >
+url이 있다. (queryString이 있다.)
+클라이언트에서 생성된다.
+string 타입만 가능하다. (=>클라이언트가 생성하고, 클라이언트는 http protocol 상에는 거의 다 'text'로 처리한다.)
+scope -> request
+
+< attribute > 
+url이 없다. (queryString이 없다.)
+서버에서 생성된다.(자바코드라서 클라이언트에서 생성이 되지 않는다)
+object 타입 가능하다.
+scope -> page, request, session, application 4가지  (request를 대부분 쓰기 때문에 공통점으로 된다.)
+ --%>
+
 
 <%--
 웹앱에서 업무상 사용하는 데이터는 파라미터라고 한다.
-업무상 사용하는 데이터로써 attribute를 다뤄보자
+★★★★업무상 사용하는 데이터로써 attribute를 다뤄보자
 set attribute 메소드 사용
 
 attribute를 각각 page request session application에 넣는다.
-
 
 출력해보면 one과 two는 null값이다.
 b로 이동 될때 scope가 끝나서 데이터가 사라져서 null값이다.
 
 pageContext : scope이 현재 페이지가 실행되는 동안 존재한다.
 request : response를 클라이언트가 보내기 직전까지 존재한다.(불편함 없이 사용가능하여 많이 사용)
-session : 세션 객체를 tomcat이 없애든 누가 없애든 누군가가 없애기 전까지 존재한다.
+session : 세션 객체를 tomcat이 없애든, 누가 없애든 누군가가 없애기 전까지 존재한다.
 application : 앱이 시작하면 존재하고 앱이 종료되면 사라진다.
 
 연결 끊은거를 논리적으로 지칭하는 용어는?????????  session
