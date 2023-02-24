@@ -15,12 +15,14 @@ url이 있다. (queryString이 있다.)
 클라이언트에서 생성된다.
 string 타입만 가능하다. (=>클라이언트가 생성하고, 클라이언트는 http protocol 상에는 거의 다 'text'로 처리한다.)
 scope -> request
+서버에 저장되어 있다.
 
 < attribute > 
 url이 없다. (queryString이 없다.)
 서버에서 생성된다.(자바코드라서 클라이언트에서 생성이 되지 않는다)
 object 타입 가능하다.
 scope -> page, request, session, application 4가지  (request를 대부분 쓰기 때문에 공통점으로 된다.)
+서버에 저장되어 있다.
  --%>
 
 

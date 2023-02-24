@@ -1,0 +1,15 @@
+<meta charset='utf-8'/>
+<h3>진열대</h3>
+<form action='cartAddProc.jsp' method ='post'>
+	<ul>
+		<li>노트북<input type='checkbox' name='product' value='노트북'></li>
+		<li>모니터<input type='checkbox' name='product' value='모니터'></li>
+		<li>마우스<input type='checkbox' name='product' value='마우스'></li>
+	</ul>
+	<button type='submit'>담기</button>
+	<button type='submit' formaction='cartOut.jsp'>보기</button>
+</form>
+
+<!-- cookie와 session의 공통점 : user 별로 각자 쓴다.
+차이점 : 1) scope이 다르다(session= session scope , cookie = 기한을 정할 수 있다.)
+	   2) 저장된 위치가 다르다.(session =서버에 저장한다 , cookie =클라이언트에 저장한다.) -->

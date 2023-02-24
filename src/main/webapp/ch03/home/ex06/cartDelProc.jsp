@@ -1,20 +1,29 @@
 <%@ page language='java' contentType='text/html; charset=utf-8' pageEncoding='utf-8'%>
+<%@ page import='java.util.List , java.util.ArrayList'%> 
 <%@ taglib prefix ='c' uri='http://java.sun.com/jsp/jstl/core'%>
-<%-- 선택한 물건을 꺼낸다. = session에 있는 물건을 삭제한다. 일부러 꺼내야한다.
-	삭제하려면 선택할 것이 필요,,,, 체크박스 만들기.
-	삭제 버튼 만들기
---%>
-<form action = 'cartOut.jsp' method='post'>
-	<ul>
-		<li>노트북<input type='checkbox' name='product' value='노트북'></li>
-		<li>모니터<input type='checkbox' name='product' value='모니터'></li>
-		<li>마우스<input type='checkbox' name='product' value='마우스'></li>
-	</ul>
-	<button type = 'submit'>삭제</button>
-</form>
-
 <%
-	session.removeAttribute("");
-%>
-	<c:redirect url ='cartOut.jsp'/>
+	String[] products = request.getParameterValues("product"); //이 product는 cartOut의 18번째 줄 product이다.
+	Object cartObj = session.getAttribute("cart");
 	
+	if(cartObj != null) {
+		List<String> cart = (List<String>)cartObj;//장바구니가 있다. 본래의 타입으로 장바구니를 casting한다.
+		
+		if(products != null && products.length > 0) {//뺄 물건이 있는 경우
+			for(String product : products)
+				cart.remove(product); //장바구니에서 뺄 물건을 선택하고 삭제한다.
+		} else { //장바구니에서 뺄 물건을 선택하지 않았다.
+%>
+	<c:set var='msg' value='장바구니에서 뺄 물건을 선택하세요.'/> <%-- set attruibute 대신 사용가능. --%>	
+<%	
+		}
+	} else { //장바구니에 물건이 없다.
+%>
+	<c:set var ='msg' value='장바구니가 없습니다.'/>
+<%
+	}
+%>
+	<c:redirect url='cartOut.jsp'>
+		<c:param name ='msg' value='${msg}'/> <%-- el ? 안에 attribute name을 쓰면 불러낸다. --%>
+	</c:redirect>
+	
+<%-- 종점이 하나인게 좋은 코드이다. --%>

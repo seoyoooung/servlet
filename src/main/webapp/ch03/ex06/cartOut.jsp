@@ -6,20 +6,20 @@
 <%
 	Object cartObj = session.getAttribute("cart");
 
-	if(cartObj != null) { //카트가 있는 경우. 정상흐름
+	if(cartObj != null) { //장바구니가 있는 경우. 정상 흐름
 		List<String> cart = (List<String>)cartObj;
-		if(cart.size() > 0 ) {//장바구니 안에 물건이 담겨있어야한다.
+		if(cart.size() > 0) { //장바구니 안에 물건이 담겨있어야한다.
 %>
-		<ul>
+	<ul>
 <%
-			for(String product: cart) { //카트에서 물건을 꺼내고
-%>		
-				<li><%= product %></li> <%-- 물건을 꺼내는 족족 li를 만든다. --%>
+			for(String product: cart) { //카트에서 물건을 꺼낸다
+%>
+		<li><%= product %></li> <%-- 물건을 꺼내는 족족 li를 만든다. --%>
 <%
 			}
-%>		
-		</ul>
+%>
+	</ul>
 <%
-		} else out.println("장바구니에 물건이 없습니다."); //장바구니는 있는데 물건이 없어
-	}else out.println("장바구니가 없습니다."); //장바구니가 아예 없어.
+		} else out.println("장바구니에 물건이 없습니다."); //장바구니는 있는데 물건이 없다.
+	} else out.println("장바구니가 없습니다."); //장바구니가 아예 없다.
 %>
