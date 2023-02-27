@@ -12,7 +12,8 @@
 	String[] products = request.getParameterValues("product");
 	if(products != null && products.length > 0) {
 		for(String product : products)
-			cart = cart.replaceFirst(product, ""); //empty string으로 바꾸는게 삭제이다.
+			cart = cart.replaceFirst(product, ""); //empty string으로 바꾸는게 삭제이다
+			//replaceFirst -> 조건에 해당하는 첫번째를 변경한다.
 			
 		//갱신된 카트를 쿠키에 붙여쓰기한다.
 		Cookie cookie = new Cookie("cart", cart);

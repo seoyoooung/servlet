@@ -10,7 +10,7 @@
 	<button type='submit' formaction='cartOut.jsp'>보기</button>
 </form>
 
-<%-- 에러메세지 출력할 자리를 만든다. --%>
+<%--폼 아래에 에러메세지 출력할 자리를 만든다.--%>
 <%
 	String msg = request.getParameter("msg");
 	if(msg != null) out.println(msg);
